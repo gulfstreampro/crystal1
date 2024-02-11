@@ -56,7 +56,7 @@
 
 <body>
   <div id="loading-screen">
-    <img src="./textures/loading1.png" alt="Loading...">
+    <img src="./textures/loading.png" alt="Loading...">
     <div id="loading-progress">
       <div id="loading-progress-fill"></div>
     </div>
@@ -89,11 +89,12 @@
       scene = new THREE.Scene();
       scene.background = new THREE.Color(0x122334);
 
-      // add model
+      // addmodel
       var loader = new THREE.GLTFLoader();
       loader.load('./model/crystal.gltf', function (gltf) {
         model = gltf.scene;
         model.scale.set(0.2, 0.2, 0.2);
+
         // add emissive materials to the model and the tracks
         model.traverse((child) => {
           if (child.isMesh) {
@@ -128,7 +129,7 @@
         new THREE.RGBELoader()
           .setDataType(THREE.UnsignedByteType)
           .setPath('./textures/')
-          .load('studio.hdr', function (texture) {
+          .load('e12.hdr', function (texture) {
             var envMap = new THREE.PMREMGenerator(renderer)
               .fromEquirectangular(texture)
               .texture;
