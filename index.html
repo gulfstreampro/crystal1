@@ -129,7 +129,7 @@
         new THREE.RGBELoader()
           .setDataType(THREE.UnsignedByteType)
           .setPath('./textures/')
-          .load('env.hdr', function (texture) {
+          .load('enviro.hdr', function (texture) {
             var envMap = new THREE.PMREMGenerator(renderer)
               .fromEquirectangular(texture)
               .texture;
